@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Game</title>
+</head>
+<body>
+    <div id="hero" class="col-md-3">
+        <p id="heroName">名称：{{name}}</p>
+        <p id="heroLevel">等级：{{level}}</p>
+        <p id="heroHpBasic">基础生命：{{hpBasic}}</p>
+        <p id="heroAtkBasic">攻击力：{{atkBasic}}</p>
+        <p id="heroMgkBasic">法术强度：{{mgkBasic}}</p>
+        <p id="heroAtkDefBasic">护甲：{{atkDefBasic}}</p>
+        <p id="heroMgkDefBasic">法术抗性：{{mgkDefBasic}}</p>
+        <!--<p id="heroCritDamage"></p>-->
+        <!--<p id="heroCritProp"></p>-->
+    </div>
+    <div id="log" class="col-md-6">
+        <p>这里是日志</p>
+    </div>
+    <div id="enemy" class="col-md-3 container">
+        <div id="enemyNow" class="row">
+            <p id="enemyNowName">名称：{{name}}</p>
+            <p id="enemyNowLevel">等级：{{level}}</p>
+            <p id="enemyNowHpBasic">基础生命：{{hpBasic}}</p>
+            <p id="enemyNowAtkBasic">攻击力：{{atkBasic}}</p>
+            <p id="enemyNowMgkBasic">法术强度：{{mgkBasic}}</p>
+            <p id="enemyNowAtkDefBasic">护甲：{{atkDefBasic}}</p>
+            <p id="enemyNowMgkDefBasic">法术抗性：{{mgkDefBasic}}</p>
+            <!--<div id="enemyNowSkill"></div>-->
+        </div>
+        <div id="enemyNext" class="row">
+            <p id="enemyNextName">名称：{{name}}</p>
+            <p id="enemyNextLevel">等级：{{level}}</p>
+            <p id="enemyNextHpBasic">基础生命：{{hpBasic}}</p>
+            <p id="enemyNextAtkBasic">攻击力：{{atkBasic}}</p>
+            <p id="enemyNextMgkBasic">法术强度：{{mgkBasic}}</p>
+            <p id="enemyNextAtkDefBasic">护甲：{{atkDefBasic}}</p>
+            <p id="enemyNextMgkDefBasic">法术抗性：{{mgkDefBasic}}</p>
+            <!--<div id="enemyNextSkill"></div>-->
+        </div>
+    </div>
+    <div id="bag" class="col-md-6"></div>
+    <div id="itemInfo" class="col-md-4">
+        <p>类型：{{bagItemType}}</p>
+        <p>等级：{{level}}</p>
+        <p>强化等级：{{enhanceLevel}}</p>
+        <button id="equip" disabled></button>
+        <button id="sell" disabled></button>
+        <button id="enhance" disabled></button>
+    </div>
+    <div id="game" class="col-md-2">
+        <!-- gold -->
+        <button id="nextRound"></button>
+    </div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+</html>

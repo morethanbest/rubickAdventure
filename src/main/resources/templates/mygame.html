@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>My game</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+       
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div id="gameControl" class="row page-titles">
+                    <div class="col-md-6 col-8 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0">高级软件设计</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">高级软件设计</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6 col-4 align-self-center">
+                        <span class="pull-left">当前金钱：{{gold}}</span>
+                        <button v-on:click="nextEnemy" class="btn pull-right hidden-sm-down btn-success">下一个</button>
+                        <button v-on:click="fight" class="btn pull-right hidden-sm-down btn-success">开始</button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+
+                <div class="row">
+                    <!-- Column -->
+                    <div id="hero" class="col-sm-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">{{name}} 信息</h4>
+                                <div class="text-left">
+                                    <h5 class="text-muted">等级：{{level}}</h5>
+                                    <h5 class="text-muted">生命&emsp;{{hpBasic}} -> {{hpNow}}</h5>
+                                    <h5 class="text-muted">攻击：{{atkBasic}} -> {{atk}}</h5>
+                                    <h5 class="text-muted">法强：{{mgkBasic}} -> {{mgk}}</h5>
+                                    <h5 class="text-muted">护甲：{{atkDefBasic}} -> {{atkDef}}</h5>
+                                    <h5 class="text-muted">法抗：{{mgkDefBasic}} -> {{mgkDef}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div id="enemyNow" class="col-sm-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title"> {{name}} 信息</h4>
+                                <div class="text-left">
+                                    <h5 class="text-muted">等级：{{level}}</h5>
+                                    <h5 class="text-muted">生命：{{hpBasic}} -> {{hpNow}}</h5>
+                                    <h5 class="text-muted">攻击：{{atkBasic}} -> {{atk}}</h5>
+                                    <h5 class="text-muted">法强：{{mgkBasic}} -> {{mgk}}</h5>
+                                    <h5 class="text-muted">护甲：{{atkDefBasic}} -> {{atkDef}}</h5>
+                                    <h5 class="text-muted">法抗：{{mgkDefBasic}} -> {{mgkDef}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="itemInfo" class="col-sm-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title"> 物品信息</h4>
+                                <div class="text-left">
+                                    <h5 class="text-muted">名称: {{name}}</h5>
+                                    <h5 class="text-muted">类别: {{bagItemType}}</h5>
+                                    <h5 class="text-muted">等级: {{level}}</h5>
+                                    <h5 class="text-muted">强化等级: {{enhanceLevel}}</h5>
+                                    <template v-if="bagItemType === 'armour'">
+                                        <h5 class="text-muted">类型: {{$data.armourType}}</h5>
+                                        <h5 class="text-muted">属性1: {{$data.feature1}} {{$data.value1}}</h5>
+                                        <h5 class="text-muted">属性2: {{$data.feature2}} {{$data.value2}}</h5>
+                                    </template>
+                                    <template v-if="bagItemType === 'weapon'">
+                                        <h5 class="text-muted">属性: {{$data.feature}} {{$data.value}}</h5>
+                                    </template>
+                                    <template v-if="bagItemType === 'skill'">
+                                        <h5 class="text-muted">冷却: {{$data.coldDown}}</h5>
+                                    </template>
+                                </div>
+                                <button v-if="!$data.isEquipped" v-on:click="equip($data.index)" class="btn pull-right hidden-sm-down btn-success">装备</button>
+                                <button v-else v-on:click="unLoad($data.index)" class="btn pull-right hidden-sm-down btn-success">卸下</button>
+                                <button v-if="!$data.isEquipped" v-on:click="enhance($data.index)" class="btn pull-right hidden-sm-down btn-success">强化</button>
+                                <button v-if="!$data.isEquipped" v-on:click="sell($data.index)" class="btn pull-right hidden-sm-down btn-success">卖出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+
+                <div class="row">
+                    <!-- Column -->
+                    <div id="slotInfo" class="col-sm-6">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">技能与装备</h4>
+                                <div class="text-left">
+                                    <div class="col-md-6 col-6">
+                                        <p>技能</p>
+                                        <a v-on:click="getSlotItemInfo(0)" v-bind:class="byLevel(skill0.level)" href="#" class="btn mybtn">{{skill0.name}}+{{skill0.enhanceLevel}}</a>
+                                        <a v-on:click="getSlotItemInfo(1)" v-bind:class="byLevel(skill1.level)" href="#" class="btn mybtn">{{skill1.name}}+{{skill1.enhanceLevel}}</a>
+                                        <a v-on:click="getSlotItemInfo(2)" v-bind:class="byLevel(skill2.level)" href="#" class="btn mybtn">{{skill2.name}}+{{skill2.enhanceLevel}}</a>
+                                        <a v-on:click="getSlotItemInfo(3)" v-bind:class="byLevel(skill3.level)" href="#" class="btn mybtn">{{skill3.name}}+{{skill3.enhanceLevel}}</a>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <p>装备</p>
+                                        <a v-on:click="getSlotItemInfo(4)" v-bind:class="byLevel(weapon.level)" href="#" class="btn mybtn">{{weapon.name}}+{{weapon.enhanceLevel}}</a>
+                                        <a v-on:click="getSlotItemInfo(5)" v-bind:class="byLevel(helmet.level)" href="#" class="btn mybtn">{{helmet.name}}+{{helmet.enhanceLevel}}</a>
+                                        <a v-on:click="getSlotItemInfo(6)" v-bind:class="byLevel(breastplate.level)" href="#" class="btn mybtn">{{breastplate.name}}+{{breastplate.enhanceLevel}}</a>
+                                        <a v-on:click="getSlotItemInfo(7)" v-bind:class="byLevel(boot.level)" href="#" class="btn mybtn">{{boot.name}}+{{boot.enhanceLevel}}</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div id="bagInfo" class="col-sm-6">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">背包</h4>
+                                <div class="text-left">
+                                    <!-- <div class="col-md-12 col-12"> -->
+                                    <template v-for="slot in slots">
+                                        <a v-if="slot.type === 'skill'" v-on:click="getInfo(slot.index)" v-bind:class="byLevel(slot.level)" href="#" class="btn hidden-sm-down">技</a>
+                                        <a v-else-if="slot.type === 'weapon'" v-on:click="getInfo(slot.index)" v-bind:class="byLevel(slot.level)" href="#"  class="btn hidden-sm-down">武</a>
+                                        <a v-else-if="slot.type === 'armour'" v-on:click="getInfo(slot.index)" v-bind:class="byLevel(slot.level)" href="#" class="btn hidden-sm-down">甲</a>
+                                        <a v-else-if="slot.type === 'none'" href="#" class="btn btn-dark hidden-sm-down">无</a>
+                                    </template>
+                                    <!-- </div> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <div class="row">
+                <div id="logInfo" class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">战斗信息</h4>
+                            <p v-for="l in log">{{l}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

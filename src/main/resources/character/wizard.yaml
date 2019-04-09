@@ -1,0 +1,442 @@
+!!mygame.chaconfig.HeroConfig
+name: 拉比克
+hp: 200
+hpGrow: 30
+mgk: 30
+mgkGrow: 5
+mgkDef: 5
+atk: 30
+atkGrow: 3
+atkDef: 1
+critDamage: 1
+critProp: 0
+skills:
+  - name: 寒霜爆发
+    description: 巫妖的V.
+    level: 1
+    buffs:
+      - type: damage
+        basicValue: 30
+        valueGrow: 15
+        feature: mgk
+        basicRatio: 0.2
+        ratioGrow: 0.05
+        toEnemy: true
+        damageType: mgk
+        round: 1
+    coldDown: 5
+  - name: 酸雾
+    description: 炼金1，减甲.
+    level: 1
+    buffs:
+    - type: weakness
+      basicValue: 2
+      valueGrow: 1
+      feature: mgk
+      featureAffect: atkDef
+      basicRatio: 0.05
+      ratioGrow: 0.01
+      toEnemy: true
+      round: 3
+    coldDown: 5
+  - name: 虚弱
+    description: 祸乱1，减攻.
+    level: 1
+    buffs:
+    - type: weakness
+      basicValue: 15
+      valueGrow: 5
+      feature: mgk
+      featureAffect: atk
+      basicRatio: 0.08
+      ratioGrow: 0.02
+      toEnemy: true
+      round: 2
+    coldDown: 6
+  - name: 魔王降临
+    description: 影魔3，改成减魔抗.
+    level: 1
+    buffs:
+    - type: weakness
+      basicValue: 5
+      valueGrow: 1.5
+      feature: mgk
+      featureAffect: mgkDef
+      basicRatio: 0.01
+      ratioGrow: 0.002
+      toEnemy: true
+      round: 3
+    coldDown: 5
+  - name: 暗言术
+    description: 术士1.
+    level: 1
+    buffs:
+    - type: healing
+      basicValue: 10
+      valueGrow: 5
+      feature: mgk
+      basicRatio: 0.1
+      ratioGrow: 0.03
+      toEnemy: false
+      round: 3
+    coldDown: 6
+  - name: 洗礼
+    description: 全能1，加了眩晕效果.
+    level: 2
+    status: stun
+    buffs:
+    - type: healing
+      basicValue: 30
+      valueGrow: 10
+      feature: mgk
+      basicRatio: 0.15
+      ratioGrow: 0.05
+      toEnemy: false
+      round: 1
+    coldDown: 5
+  - name: 极寒领域
+    description: 冰女大.
+    level: 2
+    buffs:
+    - type: damage
+      basicValue: 30
+      valueGrow: 10
+      feature: mgk
+      basicRatio: 0.4
+      ratioGrow: 0.1
+      toEnemy: true
+      damageType: mgk
+      round: 1
+    coldDown: 5
+  - name: 侵蚀雾霭
+    description: 大鱼大，减甲.
+    level: 2
+    buffs:
+    - type: weakness
+      basicValue: 10
+      valueGrow: 5
+      feature: mgk
+      featureAffect: atkDef
+      basicRatio: 0.01
+      ratioGrow: 0.005
+      toEnemy: true
+      round: 2
+    coldDown: 4
+  - name: 牺牲
+    description: 哈斯卡大.
+    level: 2
+    buffs:
+    - type: damage
+      basicValue: 60
+      valueGrow: 15
+      feature: mgk
+      basicRatio: 0.3
+      ratioGrow: 0.1
+      toEnemy: true
+      damageType: mgk
+      round: 1
+    - type: damage
+      basicValue: 30
+      valueGrow: 10
+      feature: mgk
+      basicRatio: 0.2
+      ratioGrow: 0.08
+      toEnemy: false
+      damageType: mgk
+      round: 1
+    coldDown: 5
+  - name: 超声振波
+    description: 卡尔冰火雷
+    level: 2
+    status: disarm
+    buffs:
+    - type: damage
+      basicValue: 50
+      valueGrow: 10
+      feature: mgk
+      basicRatio: 0.15
+      ratioGrow: 0.05
+      toEnemy: true
+      damageType: mgk
+      round: 1
+    coldDown: 3
+  - name: 遗言
+    description: 沉默3.
+    level: 2
+    status: silence
+    buffs:
+    - type: damage
+      basicValue: 10
+      valueGrow: 5
+      feature: mgk
+      basicRatio: 0.3
+      ratioGrow: 0.05
+      toEnemy: true
+      damageType: mgk
+      round: 3
+    coldDown: 3
+  - name: 混沌陨石
+    description: 卡尔火火雷.
+    level: 3
+    buffs:
+    - type: damage
+      basicValue: 100
+      valueGrow: 20
+      feature: mgk
+      basicRatio: 0.5
+      ratioGrow: 0.25
+      toEnemy: true
+      damageType: mgk
+      round: 3
+    coldDown: 7
+  - name: 针刺扫射
+    description: 刚被1.
+    level: 3
+    buffs:
+    - type: damage
+      basicValue: 10
+      valueGrow: 5
+      feature: atk
+      basicRatio: 0.01
+      ratioGrow: 0.01
+      toEnemy: true
+      damageType: atk
+      round: 10
+    coldDown: 0
+  - name: 蚀脑
+    description: 祸乱2.
+    level: 3
+    buffs:
+    - type: damage
+      basicValue: 100
+      valueGrow: 20
+      feature: mgk
+      basicRatio: 0.1
+      ratioGrow: 0.02
+      toEnemy: true
+      damageType: pure
+      round: 1
+    - type: healing
+      basicValue: 100
+      valueGrow: 20
+      feature: mgk
+      basicRatio: 0.1
+      ratioGrow: 0.05
+      toEnemy: false
+      round: 1
+    coldDown: 2
+weapons:
+  - name: 木制法杖
+    level: 1
+    feature: mgk
+    basic: 6
+    range: 4
+    enhanceBasic: 1
+    enhanceRange: 1
+  - name: 铁制法杖
+    level: 2
+    feature: mgk
+    basic: 20
+    range: 10
+    enhanceBasic: 5
+    enhanceRange: 5
+  - name: 火焰法杖
+    level: 2
+    feature: mgk
+    basic: 15
+    range: 10
+    enhanceBasic: 8
+    enhanceRange: 6
+  - name: 太阳法杖
+    level: 3
+    feature: mgk
+    basic: 120
+    range: 100
+    enhanceBasic: 8
+    enhanceRange: 12
+    skill:
+      name: Sun Strike
+      status: stun
+      buffs:
+        - type: damage
+          feature: mgk
+          basicValue: 20
+          valueGrow: 4
+          basicRatio: 1
+          ratioGrow: 0.2
+          round: 1
+          toEnemy: true
+          damageType: pure
+      prop: 0.25
+armours:
+  - name: 平底锅
+    type: helmet
+    level: 1
+    feature1: atkDef
+    value1: 2
+    range1: 1
+    feature2: hp
+    value2: 50
+    range2: 30
+  - name: 抗魔斗篷
+    type: helmet
+    level: 1
+    feature1: mgkDef
+    value1: 6
+    range1: 3
+    feature2: hp
+    value2: 20
+    range2: 10
+  - name: 铁意头盔
+    type: helmet
+    level: 1
+    feature1: atkDef
+    value1: 5
+    range1: 3
+    feature2: hp
+    value2: 30
+    range2: 20
+  - name: 支配头盔
+    type: helmet
+    level: 2
+    feature1: atkDef
+    value1: 8
+    range1: 3
+    feature2: hp
+    value2: 100
+    range2: 50
+  - name: 回复头巾
+    type: helmet
+    level: 2
+    feature1: atk
+    value1: 15
+    range1: 15
+    feature2: hp
+    value2: 150
+    range2: 50
+  - name: 纷争面纱
+    type: helmet
+    level: 3
+    feature1: mgk
+    value1: 70
+    range1: 40
+    feature2: hp
+    value2: 200
+    range2: 100
+  - name: 撒旦之邪力
+    type: helmet
+    level: 3
+    feature1: mgkDef
+    value1: 20
+    range1: 30
+    feature2: hp
+    value2: 300
+    range2: 150
+  - name: 敏捷便鞋
+    type: boot
+    level: 1
+    feature1: atk
+    value1: 10
+    range1: 5
+    feature2: atkDef
+    value2: 4
+    range2: 2
+  - name: 速度之靴
+    type: boot
+    level: 1
+    feature1: atk
+    value1: 10
+    range1: 5
+    feature2: atkDef
+    value2: 4
+    range2: 2
+  - name: 抗魔靴子
+    type: boot
+    level: 2
+    feature1: mgkDef
+    value1: 6
+    range1: 6
+    feature2: hp
+    value2: 80
+    range2: 60
+  - name: 静谧之鞋
+    type: boot
+    level: 2
+    feature1: mgkDef
+    value1: 8
+    range1: 6
+    feature2: mgk
+    value2: 40
+    range2: 20
+  - name: 秘法鞋
+    type: boot
+    level: 3
+    feature1: mgkDef
+    value1: 20
+    range1: 10
+    feature2: mgk
+    value2: 80
+    range2: 40
+  - name: 卫士胫甲
+    type: boot
+    level: 3
+    feature1: atk
+    value1: 40
+    range1: 20
+    feature2: hp
+    value2: 250
+    range2: 100
+  - name: 动力鞋
+    type: boot
+    level: 3
+    feature1: hp
+    value1: 200
+    range1: 200
+    feature2: mgk
+    value2: 50
+    range2: 30
+  - name: 锁子甲
+    type: breastplate
+    level: 1
+    feature1: atkDef
+    value1: 4
+    range1: 4
+    feature2: mgkDef
+    value2: 2
+    range2: 2
+  - name: 板甲
+    type: breastplate
+    level: 2
+    feature1: atkDef
+    value1: 8
+    range1: 8
+    feature2: mgkDef
+    value2: 5
+    range2: 5
+  - name: 恐鳌之心
+    type: breastplate
+    level: 3
+    feature1: hp
+    value1: 500
+    range1: 200
+    feature2: atkDef
+    value2: 20
+    range2: 20
+  - name: 强袭胸甲
+    type: breastplate
+    level: 3
+    feature1: atk
+    value1: 100
+    range1: 50
+    feature2: atkDef
+    value2: 30
+    range2: 10
+  - name: 希瓦的守护
+    type: breastplate
+    level: 3
+    feature1: mgk
+    value1: 100
+    range1: 40
+    feature2: atkDef
+    value2: 20
+    range2: 10

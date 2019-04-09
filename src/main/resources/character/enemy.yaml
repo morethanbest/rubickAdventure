@@ -1,0 +1,253 @@
+- !!mygame.chaconfig.EnemyConfig
+  name: 马尔斯
+  level: 1
+  hp: 150
+  mgk: 0
+  mgkDef: 10
+  atk: 15
+  atkDef: 50
+  critDamage: 1
+  critProp: 0
+  exp: 2
+- !!mygame.chaconfig.EnemyConfig
+  name: 主宰
+  level: 1
+  hp: 200
+  mgk: 0
+  mgkDef: 30
+  atk: 30
+  atkDef: 30
+  critDamage: 1
+  critProp: 0
+  exp: 5
+- !!mygame.chaconfig.EnemyConfig
+  name: 赏金猎人
+  level: 1
+  hp: 150
+  mgk: 0
+  mgkDef: 0
+  atk: 40
+  atkDef: 10
+  critDamage: 1
+  critProp: 0
+  exp: 4
+- !!mygame.chaconfig.EnemyConfig
+  name: 发条技师
+  level: 1
+  hp: 200
+  mgk: 0
+  mgkDef: 40
+  atk: 40
+  atkDef: 30
+  critDamage: 1
+  critProp: 0
+  exp: 7
+- !!mygame.chaconfig.EnemyConfig
+  name: 露娜
+  level: 2
+  hp: 250
+  mgk: 60
+  mgkDef: 30
+  atk: 40
+  atkDef: 30
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 月蚀
+    description: 月蚀
+    status: stun
+    buffs:
+    - type: damage
+      basicValue: 40
+      feature: mgk
+      basicRatio: 0.2
+      toEnemy: false
+      damageType: mgk
+      round: 3
+    coldDown: 2
+- !!mygame.chaconfig.EnemyConfig
+  name: 撼地者
+  level: 2
+  hp: 350
+  mgk: 80
+  mgkDef: 20
+  atk: 50
+  atkDef: 20
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 沟壑
+    description: 沟壑
+    status: stun
+    buffs:
+    - type: damage
+      basicValue: 50
+      feature: mgk
+      basicRatio: 0.2
+      toEnemy: false
+      damageType: mgk
+      round: 1
+    coldDown: 4
+- !!mygame.chaconfig.EnemyConfig
+  name: 幻影刺客
+  level: 2
+  hp: 250
+  mgk: 0
+  mgkDef: 10
+  atk: 100
+  atkDef: 50
+  critDamage: 1
+  critProp: 0
+  exp: 3
+- !!mygame.chaconfig.EnemyConfig
+  name: 敌法师
+  level: 3
+  hp: 800
+  mgk: 0
+  mgkDef: 50
+  atk: 150
+  atkDef: 15
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 法力虚空
+    description: No description.
+    buffs:
+    - type: damage
+      basicValue: 150
+      feature: mgk
+      basicRatio: 0
+      toEnemy: false
+      damageType: mgk
+      round: 1
+    - type: enhancement
+      basicValue: 30
+      feature: mgk
+      featureAffect: mgkDef
+      basicRatio: 0
+      toEnemy: true
+      round: 3
+    coldDown: 3
+- !!mygame.chaconfig.EnemyConfig
+  name: 圣堂刺客
+  level: 3
+  hp: 600
+  mgk: 0
+  mgkDef: 20
+  atk: 200
+  atkDef: 30
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 隐匿
+    description: No description.
+    buffs:
+    - type: weakness
+      basicValue: 10
+      feature: atkDef
+      featureAffect: atkDef
+      basicRatio: 0
+      toEnemy: true
+      round: 2
+    - type: damage
+      basicValue: 40
+      feature: atk
+      basicRatio: 1
+      toEnemy: false
+      damageType: atk
+      round: 1
+    coldDown: 3
+- !!mygame.chaconfig.EnemyConfig
+  name: 龙骑士
+  level: 3
+  hp: 1000
+  mgk: 0
+  mgkDef: 20
+  atk: 100
+  atkDef: 30
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 火焰吐息
+    description: No description.
+    buffs:
+    - type: damage
+      basicValue: 200
+      feature: mgk
+      basicRatio: 0
+      toEnemy: false
+      damageType: mgk
+      round: 1
+    - type: weakness
+      basicValue: 30
+      feature: atk
+      featureAffect: atk
+      basicRatio: 0.15
+      toEnemy: false
+      round: 3
+    coldDown: 3
+- !!mygame.chaconfig.EnemyConfig
+  name: 冥界亚龙
+  level: 4
+  hp: 1500
+  mgk: 200
+  mgkDef: 60
+  atk: 200
+  atkDef: 30
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 幽冥剧毒
+    description: No description.
+    buffs:
+    - type: damage
+      basicValue: 100
+      feature: mgk
+      basicRatio: 0.2
+      toEnemy: false
+      damageType: mgk
+      round: 3
+    - type: weakness
+      basicValue: 5
+      feature: mgk
+      featureAffect: mgkDef
+      basicRatio: 0.05
+      toEnemy: false
+      round: 3
+    coldDown: 2
+- !!mygame.chaconfig.EnemyConfig
+  name: 影魔
+  level: 5
+  hp: 2000
+  mgk: 400
+  mgkDef: 80
+  atk: 150
+  atkDef: 40
+  critDamage: 1
+  critProp: 0
+  exp: 4
+  skills:
+    name: 毁灭阴影
+    description: 伤害和减魔抗
+    buffs:
+    - type: damage
+      basicValue: 150
+      feature: mgk
+      basicRatio: 0.2
+      toEnemy: false
+      damageType: mgk
+      round: 1
+    - type: weakness
+      basicValue: 5
+      feature: mgkDef
+      featureAffect: mgkDef
+      basicRatio: 1
+      toEnemy: false
+      round: 3
+    coldDown: 0
